@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة إلى عوالم المعرفة - Exploring the Realms of Knowledge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+        }
+        .english-text {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(147, 197, 253, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(147, 197, 253, 0.8); }
+        }
+        
+        .floating { animation: float 3s ease-in-out infinite; }
+        .scrolling { animation: scroll 15s linear infinite; }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        
+        .sidebar-item:hover {
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #fef7ff 0%, #f0f9ff 25%, #f0fdf4 50%, #fefce8 75%, #fdf2f8 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center pulse-glow">
+                        <span class="text-2xl">🎮</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-purple-800">رحلة إلى عوالم المعرفة</h1>
+                        <p class="text-sm text-purple-600 english-text">Exploring the Realms of Knowledge</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6 space-x-reverse">
+                    <a href="#home" class="text-purple-700 hover:text-purple-900 transition-colors">الرئيسية</a>
+                    <a href="#about" class="text-purple-700 hover:text-purple-900 transition-colors">عن اللعبة</a>
+                    <a href="#subjects" class="text-purple-700 hover:text-purple-900 transition-colors">المواد</a>
+                    <a href="#contact" class="text-purple-700 hover:text-purple-900 transition-colors">تواصل معنا</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrolling Banner -->
+    <div class="bg-gradient-to-r from-blue-200 to-purple-200 py-3 overflow-hidden">
+        <div class="scrolling whitespace-nowrap text-purple-800 font-semibold">
+            🧬 الأحياء • 🧪 الكيمياء • 📊 الرياضيات • 📚 اللغة العربية • 🌍 الإنجليزية • 🎯 مغامرة تعليمية شيقة
+        </div>
+    </div>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-80 bg-white/90 backdrop-blur-sm shadow-xl min-h-screen p-6 sticky top-20">
+            <h2 class="text-xl font-bold text-purple-800 mb-6 text-center">🎯 مواد اللعبة</h2>
+            
+            <!-- Biology -->
+            <div class="sidebar-item mb-6 p-4 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl shadow-md cursor-pointer" onclick="showSubject('biology')">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl ml-3">🧬</span>
+                    <h3 class="text-lg font-semibold text-green-800">الأحياء</h3>
+                </div>
+                <p class="text-sm text-green-700 leading-relaxed">استكشف عالم الجسم البشري وضع الأعضاء في أماكنها الصحيحة</p>
+            </div>
+
+            <!-- Chemistry -->
+            <div class="sidebar-item mb-6 p-4 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl shadow-md cursor-pointer" onclick="showSubject('chemistry')">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl ml-3">🧪</span>
+                    <h3 class="text-lg font-semibold text-blue-800">الكيمياء</h3>
+                </div>
+                <p class="text-sm text-blue-700 leading-relaxed">ادخل المختبر وصنف المركبات الكيميائية مع رموزها</p>
+            </div>
+
+            <!-- Mathematics -->
+            <div class="sidebar-item mb-6 p-4 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-xl shadow-md cursor-pointer" onclick="showSubject('math')">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl ml-3">📊</span>
+                    <h3 class="text-lg font-semibold text-orange-800">الرياضيات</h3>
+                </div>
+                <p class="text-sm text-orange-700 leading-relaxed">أصلح الجسر المكسور بحل المسائل الحسابية</p>
+            </div>
+
+            <!-- Arabic -->
+            <div class="sidebar-item mb-6 p-4 bg-gradient-to-r from-pink-100 to-rose-100 rounded-xl shadow-md cursor-pointer" onclick="showSubject('arabic')">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl ml-3">📚</span>
+                    <h3 class="text-lg font-semibold text-pink-800">اللغة العربية</h3>
+                </div>
+                <p class="text-sm text-pink-700 leading-relaxed">رتب الحروف والأفعال الناسخة لبناء الكتاب السحري</p>
+            </div>
+
+            <!-- English -->
+            <div class="sidebar-item mb-6 p-4 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl shadow-md cursor-pointer" onclick="showSubject('english')">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl ml-3">🌍</span>
+                    <h3 class="text-lg font-semibold text-purple-800">الإنجليزية</h3>
+                </div>
+                <p class="text-sm text-purple-700 leading-relaxed">صنف الحيوانات المنقرضة والمهددة مع الروبوت الذكي</p>
+            </div>
+
+            <!-- Play Button -->
+            <div class="mt-8">
+                <a href="https://tech-future2025.my.canva.site/dagytu-jyms" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-4 rounded-xl font-bold text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    🎮 العب الآن!
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Hero Section -->
+            <section id="home" class="text-center mb-12">
+                <div class="floating mb-8">
+                    <div class="w-32 h-32 bg-gradient-to-br from-purple-200 via-pink-200 to-blue-200 rounded-full mx-auto flex items-center justify-center pulse-glow mb-6">
+                        <span class="text-6xl">🎯</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-5xl font-bold text-purple-800 mb-4">رحلة إلى عوالم المعرفة</h1>
+                <h2 class="text-3xl english-text text-purple-600 mb-6">Exploring the Realms of Knowledge</h2>
+                
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+                    مغامرة تعليمية تفاعلية تجمع بين المتعة والتعلم عبر خمس مراحل مشوقة
+                </p>
+
+                <!-- Animated Icons -->
+                <div class="flex justify-center space-x-8 space-x-reverse mb-8">
+                    <div class="floating" style="animation-delay: 0s;">
+                        <div class="w-20 h-20 bg-green-200 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🧬</span>
+                        </div>
+                    </div>
+                    <div class="floating" style="animation-delay: 0.5s;">
+                        <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🧪</span>
+                        </div>
+                    </div>
+                    <div class="floating" style="animation-delay: 1s;">
+                        <div class="w-20 h-20 bg-yellow-200 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">📊</span>
+                        </div>
+                    </div>
+                    <div class="floating" style="animation-delay: 1.5s;">
+                        <div class="w-20 h-20 bg-pink-200 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">📚</span>
+                        </div>
+                    </div>
+                    <div class="floating" style="animation-delay: 2s;">
+                        <div class="w-20 h-20 bg-purple-200 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🌍</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subject Details -->
+            <section id="subject-details" class="mb-12">
+                <div id="biology" class="subject-content hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-3xl font-bold text-green-800 mb-6 flex items-center">
+                        <span class="text-4xl ml-4">🧬</span>
+                        الأحياء
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        تنطلق المغامرة من داخل عالم الأحياء، حيث تظهر أمامك خريطة كبيرة للجسم البشري. الأعضاء مبعثرة: القلب، الرئتان، الكبد، المعدة… ومهمتك أن تضعي كل عضو في مكانه الصحيح داخل الجهاز الذي ينتمي إليه. كلما وضعتِ عضوًا في مكانه، يضيء جزء من الخريطة ويكشف عن العلاقة بين الأعضاء والأجهزة، وكيف يعمل الجسم بتناغم عجيب. وعندما تنجحين في توزيع الأعضاء جميعها، تتكوّن الخريطة كاملة وتتحول إلى خريطة سحرية مضيئة، تُفتح أمامك لتدلّك على الطريق نحو المختبر المليء بالتجارب الكيميائية.
+                    </p>
+                </div>
+
+                <div id="chemistry" class="subject-content hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-3xl font-bold text-blue-800 mb-6 flex items-center">
+                        <span class="text-4xl ml-4">🧪</span>
+                        الكيمياء
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        تنتقلين الآن إلى مختبر واسع تملؤه الأنابيب والقوارير، وتتصاعد منه أبخرة ملونة. على الطاولة أمامك صف طويل من المركبات الكيميائية والرموز المرتبطة بها: H₂O، NaCl، CO₂… مهمتك هي تصنيفها وربط كل مركب برمزه الصحيح. كل إجابة صحيحة تُحدث تفاعلًا مضيئًا في القارورة، فيزداد المختبر إشراقًا. ومع التقدم، يكتمل التفاعل الكيميائي ويظهر أمامك مشروب طاقة سحري. هذا المشروب ليس عاديًا، بل يمنحك القوة والسرعة لتتمكني من مواجهة التحدي الأصعب في المرحلة التالية: إصلاح الجسر المكسور باستخدام مهاراتك في الرياضيات.
+                    </p>
+                </div>
+
+                <div id="math" class="subject-content hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                        <span class="text-4xl ml-4">📊</span>
+                        الرياضيات
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        الطريق أمامك مقطوع بجسر محطم يتدلّى فوق نهر عميق. لا سبيل لعبور النهر إلا بإصلاح هذا الجسر. هنا تبدأ مهمة الأرقام: كل حجر من حجارة الجسر مرتبط بمسألة حسابية، بعضها جمع وطرح، وبعضها ضرب وقسمة. مع كل عملية صحيحة، يضيء الحجر ويثبت في مكانه، وكأنك تبنين الجسر بيديكِ. المسائل تتوالى، والجسر يكتمل تدريجيًا، قطعة بعد قطعة، حتى يصبح صلبًا وآمنًا. عندما تحلين آخر مسألة وتثبتين آخر حجر، يُفتح لك الطريق وتعبرين النهر لتصلي إلى المكتبة العظيمة حيث تنتظرك مهمة جديدة في عالم اللغة العربية.
+                    </p>
+                </div>
+
+                <div id="arabic" class="subject-content hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-3xl font-bold text-pink-800 mb-6 flex items-center">
+                        <span class="text-4xl ml-4">📚</span>
+                        الكفايات اللغوية
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        الآن تجدين نفسك في قاعة ضخمة ممتلئة برفوف عالية، والأوراق متناثرة في كل مكان. على الأوراق مكتوبة الحروف والأفعال الناسخة، لكنها مختلطة وفوضوية. مهمتك أن تفرزيها بعناية: كل حرف في مكانه، وكل فعل ناسخ مع مجموعته. مع كل ورقة تضعينها في موقعها الصحيح، تتحرك الأوراق الأخرى وتبدأ في الترتيب تلقائيًا، حتى تتجمع كلها وتتحول إلى كتاب سحري عملاق. هذا الكتاب يبدأ بالتوهج شيئًا فشيئًا، ثم يفتح من تلقاء نفسه، ليطلق شعاعًا ذهبيًا يكوّن ممرًا سحريًا يأخذك مباشرة إلى المرحلة الأخيرة، حيث الذكاء الاصطناعي واللغة الإنجليزية يجتمعان.
+                    </p>
+                </div>
+
+                <div id="english" class="subject-content hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-3xl font-bold text-purple-800 mb-6 flex items-center">
+                        <span class="text-4xl ml-4">🌍</span>
+                        الإنجليزية
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        في المرحلة الأخيرة تدخلين إلى قاعة مستقبلية يملؤها الضوء الأزرق، وفي وسطها يقف روبوت ذكي بجانب شاشة ضخمة تعرض جدولًا مليئًا بأسماء الحيوانات. بعضها منقرض مثل الديناصور والماموث، وبعضها مهدد بالانقراض مثل النمر الأبيض والسلاحف البحرية. مهمتك هي تصنيف الحيوانات بدقة: أيها منقرض وأيها مهدد. مع كل إجابة صحيحة، الروبوت يصفّر بسعادة ويضيف لك نجمة إلى رصيدك. وبعد أن تنتهي من جميع التصنيفات، يفتح الروبوت بوابة رقمية لامعة، يقودك عبرها إلى القاعة الأخيرة: قاعة التتويج.
+                    </p>
+                </div>
+            </section>
+
+            <!-- About Game Section -->
+            <section id="about" class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl mb-12">
+                <h2 class="text-3xl font-bold text-purple-800 mb-6 text-center flex items-center justify-center">
+                    <span class="text-4xl ml-4">🎮</span>
+                    تعريف عن اللعبة
+                </h2>
+                <div class="text-lg text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                        رحلة في عوالم المعرفة هي لعبة تعليمية تفاعلية مصممة لتجمع بين المتعة والتعلم في مغامرة واحدة.
+                        تأخذك اللعبة عبر خمس مراحل مترابطة، تمثل مواد دراسية مختلفة: الأحياء، الكيمياء، الرياضيات، الكفايات اللغوية، واللغة الإنجليزية.
+                    </p>
+                    <p>
+                        في كل مرحلة يواجه اللاعب تحديًا خاصًا: توزيع الأعضاء على الأجهزة، تصنيف المركبات الكيميائية مع رموزها، حل مسائل حسابية لإصلاح الجسر، فرز الحروف والأفعال الناسخة لبناء كتاب سحري، وأخيرًا تصنيف الحيوانات المنقرضة والمهددة بالانقراض بمساعدة روبوت ذكي.
+                    </p>
+                    <p>
+                        الإنجاز في كل مرحلة يمنحك نجومًا تساعدك على التقدم، وفي النهاية تصل إلى القاعة (قاعة التتويج) حيث تُعرض نتائجك، وتُمنح لقبًا يعكس أداؤك مثل ملكة العلوم، مستكشف العلوم، أو الباحثة الصغيرة.
+                    </p>
+                    <p>
+                        اللعبة لا تركز على الدرجات فقط، بل على رحلة التعلم نفسها: الاستكشاف، حل المشكلات، واكتشاف متعة الدراسة عندما تتحول إلى مغامرة مشوّقة مليئة بالتحديات والخيال.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-purple-800 mb-2">تعلم تفاعلي</h3>
+                    <p class="text-gray-600">تجربة تعليمية ممتعة تجمع بين اللعب والتعلم</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="text-xl font-semibold text-purple-800 mb-2">نظام النجوم</h3>
+                    <p class="text-gray-600">اكسب النجوم مع كل إنجاز وتقدم في المراحل</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-xl font-semibold text-purple-800 mb-2">ألقاب الإنجاز</h3>
+                    <p class="text-gray-600">احصل على ألقاب مميزة تعكس مستوى أدائك</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <h3 class="text-2xl font-bold mb-2">رحلة إلى عوالم المعرفة</h3>
+                <p class="english-text">Exploring the Realms of Knowledge</p>
+            </div>
+            <p class="text-purple-200">© 2024 جميع الحقوق محفوظة - مغامرة تعليمية تفاعلية</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSubject(subjectId) {
+            // Hide all subject contents
+            const contents = document.querySelectorAll('.subject-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show selected subject
+            const selectedContent = document.getElementById(subjectId);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Show biology by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSubject('biology');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'985ce51ef22116a3',t:'MTc1ODk5NTk2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
